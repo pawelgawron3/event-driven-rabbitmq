@@ -22,3 +22,5 @@ async function sendOrderCreatedEvent(orderId, customerId) {
   await channel.close();
   await connection.close();
 }
+
+sendOrderCreatedEvent("1", "99");
