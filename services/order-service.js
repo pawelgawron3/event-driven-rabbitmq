@@ -1,4 +1,4 @@
-const amqp = require("amqplib");
+import amqp from "amqplib";
 
 async function sendOrderCreatedEvent(orderId, customerId) {
   const connection = await amqp.connect("amqp://localhost");

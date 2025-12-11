@@ -1,4 +1,4 @@
-const amqp = require("amqplib");
+import amqp from "amqplib";
 
 async function processOrderCreated(msg) {
   const event = JSON.parse(msg.content.toString());

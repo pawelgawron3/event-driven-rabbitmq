@@ -2,9 +2,13 @@
   "name": "event-driven-rabbitmq",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "order": "node services/order-service.js",
+    "payment": "node services/payment-service.js",
+    "shipping": "node services/shipping-service.js"
   },
   "keywords": [],
   "author": "",
