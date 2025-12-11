@@ -17,7 +17,7 @@ async function sendOrderCreatedEvent(orderId, customerId) {
     persistent: true,
   });
 
-  console.log(`Order ${orderId} created and event send`);
+  console.log(`Order ${orderId} created and event sent`);
 
   await channel.close();
   await connection.close();
