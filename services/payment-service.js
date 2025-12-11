@@ -32,3 +32,16 @@ async function sendPaymentProcessedEvent(orderId) {
   await channel.close();
   await connection.close();
 }
+
+async function consumeOrderCreatedEvent() {
+  const connection = await amqp.connect("amqp://localhost");
+  const channel = await connection.createChannel();
+  const queue = "order_created_queue";
+
+  await channel.assertQueue(queue, { durable: true });
+
+  console.log("Waiting for order created events...");
+  channel.consume(queue, processOrderCreated, { noAck: false });
+}
+
+consumeOrderCreatedEvent();
