@@ -13,7 +13,7 @@ async function processOrderCreated(msg) {
 
 async function sendPaymentProcessedEvent(orderId) {
   const connection = await amqp.connect("amqp://localhost");
-  const channel = connection.createChannel();
+  const channel = await connection.createChannel();
   const queue = "payment_processed_queue";
 
   await channel.assertQueue(queue, { durable: true });
